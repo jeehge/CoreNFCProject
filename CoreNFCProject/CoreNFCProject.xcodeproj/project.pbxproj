@@ -9,21 +9,24 @@
 /* Begin PBXBuildFile section */
 		E9F0DB0D237D996000A621C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F0DB0C237D996000A621C3 /* AppDelegate.swift */; };
 		E9F0DB0F237D996000A621C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F0DB0E237D996000A621C3 /* SceneDelegate.swift */; };
-		E9F0DB11237D996000A621C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F0DB10237D996000A621C3 /* ViewController.swift */; };
+		E9F0DB11237D996000A621C3 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F0DB10237D996000A621C3 /* WriteViewController.swift */; };
 		E9F0DB14237D996000A621C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9F0DB12237D996000A621C3 /* Main.storyboard */; };
 		E9F0DB16237D996100A621C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9F0DB15237D996100A621C3 /* Assets.xcassets */; };
 		E9F0DB19237D996100A621C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9F0DB17237D996100A621C3 /* LaunchScreen.storyboard */; };
+		E9F0DB21237D99C700A621C3 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F0DB20237D99C700A621C3 /* ScanViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E9F0DB09237D996000A621C3 /* CoreNFCProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreNFCProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9F0DB0C237D996000A621C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9F0DB0E237D996000A621C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E9F0DB10237D996000A621C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E9F0DB10237D996000A621C3 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 		E9F0DB13237D996000A621C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E9F0DB15237D996100A621C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9F0DB18237D996100A621C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9F0DB1A237D996100A621C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9F0DB20237D99C700A621C3 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		E9F0DB22237E85D600A621C3 /* CoreNFCProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoreNFCProject.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +59,11 @@
 		E9F0DB0B237D996000A621C3 /* CoreNFCProject */ = {
 			isa = PBXGroup;
 			children = (
+				E9F0DB22237E85D600A621C3 /* CoreNFCProject.entitlements */,
 				E9F0DB0C237D996000A621C3 /* AppDelegate.swift */,
 				E9F0DB0E237D996000A621C3 /* SceneDelegate.swift */,
-				E9F0DB10237D996000A621C3 /* ViewController.swift */,
+				E9F0DB20237D99C700A621C3 /* ScanViewController.swift */,
+				E9F0DB10237D996000A621C3 /* WriteViewController.swift */,
 				E9F0DB12237D996000A621C3 /* Main.storyboard */,
 				E9F0DB15237D996100A621C3 /* Assets.xcassets */,
 				E9F0DB17237D996100A621C3 /* LaunchScreen.storyboard */,
@@ -138,9 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9F0DB11237D996000A621C3 /* ViewController.swift in Sources */,
+				E9F0DB11237D996000A621C3 /* WriteViewController.swift in Sources */,
 				E9F0DB0D237D996000A621C3 /* AppDelegate.swift in Sources */,
 				E9F0DB0F237D996000A621C3 /* SceneDelegate.swift in Sources */,
+				E9F0DB21237D99C700A621C3 /* ScanViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +222,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +276,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -284,6 +290,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CoreNFCProject/CoreNFCProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4U3LY873Q2;
 				INFOPLIST_FILE = CoreNFCProject/Info.plist;
@@ -302,6 +309,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CoreNFCProject/CoreNFCProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4U3LY873Q2;
 				INFOPLIST_FILE = CoreNFCProject/Info.plist;

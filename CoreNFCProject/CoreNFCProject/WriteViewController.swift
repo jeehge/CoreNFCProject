@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  WriteViewController.swift
 //  CoreNFCProject
 //
 //  Created by JH on 2019/11/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class WriteViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
