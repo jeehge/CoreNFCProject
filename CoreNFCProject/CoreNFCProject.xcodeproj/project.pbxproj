@@ -7,27 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E9F0DAEA237C4F7D00A621C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F0DAE9237C4F7D00A621C3 /* AppDelegate.swift */; };
-		E9F0DAEC237C4F7D00A621C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F0DAEB237C4F7D00A621C3 /* SceneDelegate.swift */; };
-		E9F0DAEE237C4F7D00A621C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F0DAED237C4F7D00A621C3 /* ViewController.swift */; };
-		E9F0DAF1237C4F7D00A621C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9F0DAEF237C4F7D00A621C3 /* Main.storyboard */; };
-		E9F0DAF3237C4F7F00A621C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9F0DAF2237C4F7F00A621C3 /* Assets.xcassets */; };
-		E9F0DAF6237C4F7F00A621C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9F0DAF4237C4F7F00A621C3 /* LaunchScreen.storyboard */; };
+		E9F0DB0D237D996000A621C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F0DB0C237D996000A621C3 /* AppDelegate.swift */; };
+		E9F0DB0F237D996000A621C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F0DB0E237D996000A621C3 /* SceneDelegate.swift */; };
+		E9F0DB11237D996000A621C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F0DB10237D996000A621C3 /* ViewController.swift */; };
+		E9F0DB14237D996000A621C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9F0DB12237D996000A621C3 /* Main.storyboard */; };
+		E9F0DB16237D996100A621C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9F0DB15237D996100A621C3 /* Assets.xcassets */; };
+		E9F0DB19237D996100A621C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9F0DB17237D996100A621C3 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E9F0DAE6237C4F7D00A621C3 /* CoreNFCProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreNFCProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9F0DAE9237C4F7D00A621C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E9F0DAEB237C4F7D00A621C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E9F0DAED237C4F7D00A621C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E9F0DAF0237C4F7D00A621C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E9F0DAF2237C4F7F00A621C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E9F0DAF5237C4F7F00A621C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E9F0DAF7237C4F7F00A621C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9F0DB09237D996000A621C3 /* CoreNFCProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreNFCProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9F0DB0C237D996000A621C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E9F0DB0E237D996000A621C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E9F0DB10237D996000A621C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E9F0DB13237D996000A621C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E9F0DB15237D996100A621C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E9F0DB18237D996100A621C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E9F0DB1A237D996100A621C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E9F0DAE3237C4F7D00A621C3 /* Frameworks */ = {
+		E9F0DB06237D996000A621C3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,32 +37,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E9F0DADD237C4F7D00A621C3 = {
+		E9F0DB00237D996000A621C3 = {
 			isa = PBXGroup;
 			children = (
-				E9F0DAE8237C4F7D00A621C3 /* CoreNFCProject */,
-				E9F0DAE7237C4F7D00A621C3 /* Products */,
+				E9F0DB0B237D996000A621C3 /* CoreNFCProject */,
+				E9F0DB0A237D996000A621C3 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		E9F0DAE7237C4F7D00A621C3 /* Products */ = {
+		E9F0DB0A237D996000A621C3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E9F0DAE6237C4F7D00A621C3 /* CoreNFCProject.app */,
+				E9F0DB09237D996000A621C3 /* CoreNFCProject.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E9F0DAE8237C4F7D00A621C3 /* CoreNFCProject */ = {
+		E9F0DB0B237D996000A621C3 /* CoreNFCProject */ = {
 			isa = PBXGroup;
 			children = (
-				E9F0DAE9237C4F7D00A621C3 /* AppDelegate.swift */,
-				E9F0DAEB237C4F7D00A621C3 /* SceneDelegate.swift */,
-				E9F0DAED237C4F7D00A621C3 /* ViewController.swift */,
-				E9F0DAEF237C4F7D00A621C3 /* Main.storyboard */,
-				E9F0DAF2237C4F7F00A621C3 /* Assets.xcassets */,
-				E9F0DAF4237C4F7F00A621C3 /* LaunchScreen.storyboard */,
-				E9F0DAF7237C4F7F00A621C3 /* Info.plist */,
+				E9F0DB0C237D996000A621C3 /* AppDelegate.swift */,
+				E9F0DB0E237D996000A621C3 /* SceneDelegate.swift */,
+				E9F0DB10237D996000A621C3 /* ViewController.swift */,
+				E9F0DB12237D996000A621C3 /* Main.storyboard */,
+				E9F0DB15237D996100A621C3 /* Assets.xcassets */,
+				E9F0DB17237D996100A621C3 /* LaunchScreen.storyboard */,
+				E9F0DB1A237D996100A621C3 /* Info.plist */,
 			);
 			path = CoreNFCProject;
 			sourceTree = "<group>";
@@ -70,13 +70,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E9F0DAE5237C4F7D00A621C3 /* CoreNFCProject */ = {
+		E9F0DB08237D996000A621C3 /* CoreNFCProject */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E9F0DAFA237C4F7F00A621C3 /* Build configuration list for PBXNativeTarget "CoreNFCProject" */;
+			buildConfigurationList = E9F0DB1D237D996100A621C3 /* Build configuration list for PBXNativeTarget "CoreNFCProject" */;
 			buildPhases = (
-				E9F0DAE2237C4F7D00A621C3 /* Sources */,
-				E9F0DAE3237C4F7D00A621C3 /* Frameworks */,
-				E9F0DAE4237C4F7D00A621C3 /* Resources */,
+				E9F0DB05237D996000A621C3 /* Sources */,
+				E9F0DB06237D996000A621C3 /* Frameworks */,
+				E9F0DB07237D996000A621C3 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -84,25 +84,25 @@
 			);
 			name = CoreNFCProject;
 			productName = CoreNFCProject;
-			productReference = E9F0DAE6237C4F7D00A621C3 /* CoreNFCProject.app */;
+			productReference = E9F0DB09237D996000A621C3 /* CoreNFCProject.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		E9F0DADE237C4F7D00A621C3 /* Project object */ = {
+		E9F0DB01237D996000A621C3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1120;
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = JH;
 				TargetAttributes = {
-					E9F0DAE5237C4F7D00A621C3 = {
+					E9F0DB08237D996000A621C3 = {
 						CreatedOnToolsVersion = 11.2.1;
 					};
 				};
 			};
-			buildConfigurationList = E9F0DAE1237C4F7D00A621C3 /* Build configuration list for PBXProject "CoreNFCProject" */;
+			buildConfigurationList = E9F0DB04237D996000A621C3 /* Build configuration list for PBXProject "CoreNFCProject" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -110,55 +110,55 @@
 				en,
 				Base,
 			);
-			mainGroup = E9F0DADD237C4F7D00A621C3;
-			productRefGroup = E9F0DAE7237C4F7D00A621C3 /* Products */;
+			mainGroup = E9F0DB00237D996000A621C3;
+			productRefGroup = E9F0DB0A237D996000A621C3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E9F0DAE5237C4F7D00A621C3 /* CoreNFCProject */,
+				E9F0DB08237D996000A621C3 /* CoreNFCProject */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E9F0DAE4237C4F7D00A621C3 /* Resources */ = {
+		E9F0DB07237D996000A621C3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9F0DAF6237C4F7F00A621C3 /* LaunchScreen.storyboard in Resources */,
-				E9F0DAF3237C4F7F00A621C3 /* Assets.xcassets in Resources */,
-				E9F0DAF1237C4F7D00A621C3 /* Main.storyboard in Resources */,
+				E9F0DB19237D996100A621C3 /* LaunchScreen.storyboard in Resources */,
+				E9F0DB16237D996100A621C3 /* Assets.xcassets in Resources */,
+				E9F0DB14237D996000A621C3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E9F0DAE2237C4F7D00A621C3 /* Sources */ = {
+		E9F0DB05237D996000A621C3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9F0DAEE237C4F7D00A621C3 /* ViewController.swift in Sources */,
-				E9F0DAEA237C4F7D00A621C3 /* AppDelegate.swift in Sources */,
-				E9F0DAEC237C4F7D00A621C3 /* SceneDelegate.swift in Sources */,
+				E9F0DB11237D996000A621C3 /* ViewController.swift in Sources */,
+				E9F0DB0D237D996000A621C3 /* AppDelegate.swift in Sources */,
+				E9F0DB0F237D996000A621C3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E9F0DAEF237C4F7D00A621C3 /* Main.storyboard */ = {
+		E9F0DB12237D996000A621C3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E9F0DAF0237C4F7D00A621C3 /* Base */,
+				E9F0DB13237D996000A621C3 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		E9F0DAF4237C4F7F00A621C3 /* LaunchScreen.storyboard */ = {
+		E9F0DB17237D996100A621C3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E9F0DAF5237C4F7F00A621C3 /* Base */,
+				E9F0DB18237D996100A621C3 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -166,7 +166,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		E9F0DAF8237C4F7F00A621C3 /* Debug */ = {
+		E9F0DB1B237D996100A621C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -226,7 +226,7 @@
 			};
 			name = Debug;
 		};
-		E9F0DAF9237C4F7F00A621C3 /* Release */ = {
+		E9F0DB1C237D996100A621C3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -280,7 +280,7 @@
 			};
 			name = Release;
 		};
-		E9F0DAFB237C4F7F00A621C3 /* Debug */ = {
+		E9F0DB1E237D996100A621C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -298,7 +298,7 @@
 			};
 			name = Debug;
 		};
-		E9F0DAFC237C4F7F00A621C3 /* Release */ = {
+		E9F0DB1F237D996100A621C3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -319,25 +319,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E9F0DAE1237C4F7D00A621C3 /* Build configuration list for PBXProject "CoreNFCProject" */ = {
+		E9F0DB04237D996000A621C3 /* Build configuration list for PBXProject "CoreNFCProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E9F0DAF8237C4F7F00A621C3 /* Debug */,
-				E9F0DAF9237C4F7F00A621C3 /* Release */,
+				E9F0DB1B237D996100A621C3 /* Debug */,
+				E9F0DB1C237D996100A621C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E9F0DAFA237C4F7F00A621C3 /* Build configuration list for PBXNativeTarget "CoreNFCProject" */ = {
+		E9F0DB1D237D996100A621C3 /* Build configuration list for PBXNativeTarget "CoreNFCProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E9F0DAFB237C4F7F00A621C3 /* Debug */,
-				E9F0DAFC237C4F7F00A621C3 /* Release */,
+				E9F0DB1E237D996100A621C3 /* Debug */,
+				E9F0DB1F237D996100A621C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = E9F0DADE237C4F7D00A621C3 /* Project object */;
+	rootObject = E9F0DB01237D996000A621C3 /* Project object */;
 }

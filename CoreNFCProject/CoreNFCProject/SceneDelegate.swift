@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  CoreNFCProject
 //
-//  Created by JH on 2019/11/13.
+//  Created by JH on 2019/11/14.
 //  Copyright © 2019 JH. All rights reserved.
 //
 
