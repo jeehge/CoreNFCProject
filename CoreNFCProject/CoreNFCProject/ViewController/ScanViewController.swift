@@ -28,8 +28,9 @@ class ScanViewController: UIViewController {
 
     // MARK: - Properties
     @IBOutlet weak var tableView: UITableView!
-    let reuseIdentifier = "reuseIdentifier"
-    var detectedMessages = [NFCNDEFMessage]()
+    
+    let reuseIdentifier = "reuseIdentifier"         // table view cell identifier
+    var detectedMessages = [NFCNDEFMessage]()       // 읽은 정보 가지고 있는 배열
     var message: NFCNDEFMessage = .init(records: [])
     var session: NFCNDEFReaderSession?
     
@@ -41,10 +42,11 @@ class ScanViewController: UIViewController {
     }
     
     // MARK: - Initalize
-    func initTableView() {
+    private func initTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         
+        // 테이블뷰 높이 동적으로 할당
         tableView.estimatedRowHeight = 70
         tableView.rowHeight = UITableView.automaticDimension
     }
@@ -79,24 +81,22 @@ extension ScanViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
-        
-        guard let textLabel = cell.textLabel else {
-            return cell
-        }
+        guard let textLabel = cell.textLabel else { return cell }
 
         textLabel.text = "잘못된 데이터".localized
         textLabel.numberOfLines = 0
 
         let message = detectedMessages[indexPath.row]
-        var resultString: String = ""
+        var resultString: String = "" // 셀에 입력될 텍스트를 가지고 있는 변수
         message.records.forEach { payload in
             switch payload.typeNameFormat {
             case .nfcWellKnown:
                 if let type = String(data: payload.type, encoding: .utf8) {
                     if let url = payload.wellKnownTypeURIPayload() {
-                        resultString += "\(payload.typeNameFormat.description): \(type), \(url.absoluteString)"
+                        resultString += "\(payload.typeNameFormat.description): \(type), url : \(url.absoluteString)"
                     } else {
-                        if let text = String(data: payload.payload, encoding: String.Encoding.utf8) {
+                        let (additionInfo, _) = payload.wellKnownTypeTextPayload()
+                        if let text = additionInfo {
                             resultString += "\(payload.typeNameFormat.description): \(type), text : \(text)"
                         } else {
                             resultString += "\(payload.typeNameFormat.description): \(type)"
@@ -144,45 +144,41 @@ extension ScanViewController: NFCNDEFReaderSessionDelegate {
                 session.restartPolling()
             })
         } else {
-            let tag = tags.first!
+            guard let tag = tags.first else { return }
             session.connect(to: tag, completionHandler: { (error: Error?) in
                 if nil != error {
                     session.alertMessage = "태그에 연결할 수 없습니다.".localized
                     session.invalidate()
-                    return
-                }
-                
-                tag.queryNDEFStatus(completionHandler: { (ndefStatus: NFCNDEFStatus, capacity: Int, error: Error?) in
-                    if .notSupported == ndefStatus {
-                        session.alertMessage = "태그가 NDEF 호환되지 않습니다".localized
-                        session.invalidate()
-                        return
-                    } else if nil != error {
-                        session.alertMessage = "태그의 NDEF 상태를 조회 할 수 없습니다".localized
-                        session.invalidate()
-                        return
-                    }
-                    
-                    tag.readNDEF(completionHandler: { (message: NFCNDEFMessage?, error: Error?) in
-                        var statusMessage: String
-                        if nil != error || nil == message {
-                            statusMessage = "태그에서 NDEF를 읽지 못했습니다".localized
-                        } else {
-                            statusMessage = "한 개의 NDEF 메시지를 찾았습니다".localized
-                            DispatchQueue.main.async {
-                                // message를 찾으면 추가!
-                                if let msg = message {
-                                    self.detectedMessages.append(msg)
-                                    self.tableView.reloadData()
-                                }
-                                
-                            }
+                } else {
+                    tag.queryNDEFStatus(completionHandler: { (ndefStatus: NFCNDEFStatus, capacity: Int, error: Error?) in
+                        if .notSupported == ndefStatus {
+                            session.alertMessage = "태그가 NDEF 호환되지 않습니다".localized
+                            session.invalidate()
+                            return
+                        } else if nil != error {
+                            session.alertMessage = "태그의 NDEF 상태를 조회 할 수 없습니다".localized
+                            session.invalidate()
+                            return
                         }
                         
-                        session.alertMessage = statusMessage
-                        session.invalidate()
+                        tag.readNDEF(completionHandler: { (message: NFCNDEFMessage?, error: Error?) in
+                            var statusMessage: String
+                            if nil != error || nil == message {
+                                statusMessage = "태그에서 NDEF를 읽지 못했습니다".localized
+                            } else {
+                                statusMessage = "NDEF 메시지를 찾았습니다".localized
+                                DispatchQueue.main.async {
+                                    if let msg = message { // message를 찾으면 추가!
+                                        self.detectedMessages.append(msg)
+                                        self.tableView.reloadData()
+                                    }
+                                }
+                            }
+                            session.alertMessage = statusMessage
+                            session.invalidate()
+                        })
                     })
-                })
+                }
             })
         }
     }
