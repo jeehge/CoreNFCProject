@@ -89,8 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				E9F0DB0B237D996000A621C3 /* CoreNFCProject */,
-				E9F0DB0C237D996000A621C3 /* AppDelegate.swift */,
-				E9F0DB0E237D996000A621C3 /* SceneDelegate.swift */,
 				E9F0DB0A237D996000A621C3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,8 +106,10 @@
 			children = (
 				E9F0DB22237E85D600A621C3 /* CoreNFCProject.entitlements */,
 				E907FDCF2386176A004FA691 /* ViewController */,
-				E907FDD52386180B004FA691 /* Supporting Files */,
 				E907FDCE23861754004FA691 /* Util */,
+				E907FDD52386180B004FA691 /* Supporting Files */,
+				E9F0DB0C237D996000A621C3 /* AppDelegate.swift */,
+				E9F0DB0E237D996000A621C3 /* SceneDelegate.swift */,
 			);
 			path = CoreNFCProject;
 			sourceTree = "<group>";
