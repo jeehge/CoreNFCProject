@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E907FDD223861792004FA691 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E907FDD123861792004FA691 /* UIViewController+Extension.swift */; };
+		E907FDD4238617E2004FA691 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E907FDD3238617E2004FA691 /* String+Extension.swift */; };
+		E907FDDA23862D3B004FA691 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E907FDDC23862D3B004FA691 /* Localizable.strings */; };
 		E9F0DB0D237D996000A621C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F0DB0C237D996000A621C3 /* AppDelegate.swift */; };
 		E9F0DB0F237D996000A621C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F0DB0E237D996000A621C3 /* SceneDelegate.swift */; };
 		E9F0DB11237D996000A621C3 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F0DB10237D996000A621C3 /* WriteViewController.swift */; };
@@ -17,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E907FDD123861792004FA691 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		E907FDD3238617E2004FA691 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		E907FDDB23862D3B004FA691 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E907FDDD23862D40004FA691 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E9F0DB09237D996000A621C3 /* CoreNFCProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreNFCProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9F0DB0C237D996000A621C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9F0DB0E237D996000A621C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,10 +47,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E907FDCE23861754004FA691 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				E907FDD023861779004FA691 /* Extension */,
+				E907FDDC23862D3B004FA691 /* Localizable.strings */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		E907FDCF2386176A004FA691 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E9F0DB20237D99C700A621C3 /* ScanViewController.swift */,
+				E9F0DB10237D996000A621C3 /* WriteViewController.swift */,
+				E9F0DB12237D996000A621C3 /* Main.storyboard */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		E907FDD023861779004FA691 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E907FDD123861792004FA691 /* UIViewController+Extension.swift */,
+				E907FDD3238617E2004FA691 /* String+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		E907FDD52386180B004FA691 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E9F0DB17237D996100A621C3 /* LaunchScreen.storyboard */,
+				E9F0DB15237D996100A621C3 /* Assets.xcassets */,
+				E9F0DB1A237D996100A621C3 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		E9F0DB00237D996000A621C3 = {
 			isa = PBXGroup;
 			children = (
 				E9F0DB0B237D996000A621C3 /* CoreNFCProject */,
+				E9F0DB0C237D996000A621C3 /* AppDelegate.swift */,
+				E9F0DB0E237D996000A621C3 /* SceneDelegate.swift */,
 				E9F0DB0A237D996000A621C3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,14 +107,9 @@
 			isa = PBXGroup;
 			children = (
 				E9F0DB22237E85D600A621C3 /* CoreNFCProject.entitlements */,
-				E9F0DB0C237D996000A621C3 /* AppDelegate.swift */,
-				E9F0DB0E237D996000A621C3 /* SceneDelegate.swift */,
-				E9F0DB20237D99C700A621C3 /* ScanViewController.swift */,
-				E9F0DB10237D996000A621C3 /* WriteViewController.swift */,
-				E9F0DB12237D996000A621C3 /* Main.storyboard */,
-				E9F0DB15237D996100A621C3 /* Assets.xcassets */,
-				E9F0DB17237D996100A621C3 /* LaunchScreen.storyboard */,
-				E9F0DB1A237D996100A621C3 /* Info.plist */,
+				E907FDCF2386176A004FA691 /* ViewController */,
+				E907FDD52386180B004FA691 /* Supporting Files */,
+				E907FDCE23861754004FA691 /* Util */,
 			);
 			path = CoreNFCProject;
 			sourceTree = "<group>";
@@ -114,6 +156,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = E9F0DB00237D996000A621C3;
 			productRefGroup = E9F0DB0A237D996000A621C3 /* Products */;
@@ -131,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9F0DB19237D996100A621C3 /* LaunchScreen.storyboard in Resources */,
+				E907FDDA23862D3B004FA691 /* Localizable.strings in Resources */,
 				E9F0DB16237D996100A621C3 /* Assets.xcassets in Resources */,
 				E9F0DB14237D996000A621C3 /* Main.storyboard in Resources */,
 			);
@@ -146,6 +190,8 @@
 				E9F0DB11237D996000A621C3 /* WriteViewController.swift in Sources */,
 				E9F0DB0D237D996000A621C3 /* AppDelegate.swift in Sources */,
 				E9F0DB0F237D996000A621C3 /* SceneDelegate.swift in Sources */,
+				E907FDD223861792004FA691 /* UIViewController+Extension.swift in Sources */,
+				E907FDD4238617E2004FA691 /* String+Extension.swift in Sources */,
 				E9F0DB21237D99C700A621C3 /* ScanViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +199,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		E907FDDC23862D3B004FA691 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E907FDDB23862D3B004FA691 /* ko */,
+				E907FDDD23862D40004FA691 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		E9F0DB12237D996000A621C3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -176,6 +231,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -236,6 +292,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -293,7 +350,7 @@
 				CODE_SIGN_ENTITLEMENTS = CoreNFCProject/CoreNFCProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4U3LY873Q2;
-				INFOPLIST_FILE = CoreNFCProject/Info.plist;
+				INFOPLIST_FILE = "CoreNFCProject/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,7 +369,7 @@
 				CODE_SIGN_ENTITLEMENTS = CoreNFCProject/CoreNFCProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4U3LY873Q2;
-				INFOPLIST_FILE = CoreNFCProject/Info.plist;
+				INFOPLIST_FILE = "CoreNFCProject/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
