@@ -20,6 +20,18 @@ class WriteViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        initPayload()
+    }
+    
+    // MARK: - Initalize
+    func initPayload() {
+        resultPayload = []
     }
     
     // MARK: - Actions
@@ -111,36 +123,33 @@ extension WriteViewController: UINavigationControllerDelegate, NFCNDEFReaderSess
             session.connect(to: tag) { (error: Error?) in
                 if error != nil {
                     session.restartPolling()
-                    return
-                }
-                
-                // You then query the NDEF status of tag.
-                tag.queryNDEFStatus() { (status: NFCNDEFStatus, capacity: Int, error: Error?) in
-                    if error != nil {
-                        session.invalidate(errorMessage: "NDEF 상태를 확인하지 못 했습니다. 다시 시도해주세요.".localized)
-                        return
-                    }
-                    
-                    if status == .readOnly {
-                        session.invalidate(errorMessage: "태그를 쓸 수 없습니다.".localized)
-                    } else if status == .readWrite {
-                        if self.ndefMessage!.length > capacity {
-                            session.invalidate(errorMessage: "태그 용량이 너무 작습니다. 최소 크기 요구 사항은 [byte] 바이트입니다.".localized.replace("[byte]", "\(self.ndefMessage!.length)"))
-                            return
-                        }
-                        
-                        // When a tag is read-writable and has sufficient capacity,
-                        // write an NDEF message to it.
-                        tag.writeNDEF(self.ndefMessage!) { (error: Error?) in
-                            if error != nil {
-                                session.invalidate(errorMessage: "태그 업데이트에 실패했습니다. 다시 시도해주세요.".localized)
+                } else {
+                    // You then query the NDEF status of tag.
+                    tag.queryNDEFStatus() { (status: NFCNDEFStatus, capacity: Int, error: Error?) in
+                        if error != nil {
+                            session.invalidate(errorMessage: "NDEF 상태를 확인하지 못 했습니다. 다시 시도해주세요.".localized)
+                        } else {
+                            if status == .readOnly {
+                                session.invalidate(errorMessage: "태그를 쓸 수 없습니다.".localized)
+                            } else if status == .readWrite {
+                                if self.ndefMessage!.length > capacity {
+                                    session.invalidate(errorMessage: "태그 용량이 너무 작습니다. 최소 크기 요구 사항은 [byte] 바이트입니다.".localized.replace("[byte]", "\(self.ndefMessage!.length)"))
+                                } else {
+                                    // When a tag is read-writable and has sufficient capacity,
+                                    // write an NDEF message to it.
+                                    tag.writeNDEF(self.ndefMessage!) { (error: Error?) in
+                                        if error != nil {
+                                            session.invalidate(errorMessage: "태그 업데이트에 실패했습니다. 다시 시도해주세요.".localized)
+                                        } else {
+                                            session.alertMessage = "업데이트 성공!".localized
+                                            session.invalidate()
+                                        }
+                                    }
+                                }
                             } else {
-                                session.alertMessage = "업데이트 성공!".localized
-                                session.invalidate()
+                                session.invalidate(errorMessage: "태그가 NDEF 형식이 아닙니다.".localized)
                             }
                         }
-                    } else {
-                        session.invalidate(errorMessage: "태그가 NDEF 형식이 아닙니다.".localized)
                     }
                 }
             }

@@ -130,6 +130,12 @@ extension ScanViewController: NFCNDEFReaderSessionDelegate {
     func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
         print("readerSession:didDetectNDEFs")
         /// ???: 왜 얘는 호출은 안되는데 필수인거죠?
+        // 설명엔 NDEF Message 를 읽는 것 같은데...(긁적)
+        DispatchQueue.main.async {
+            // Process detected NFCNDEFMessage objects.
+            self.detectedMessages.append(contentsOf: messages)
+            self.tableView.reloadData()
+        }
     }
     
     // 리더가 RF 필드에서 NDEF 태그를 감지하면 호출
@@ -154,29 +160,27 @@ extension ScanViewController: NFCNDEFReaderSessionDelegate {
                         if .notSupported == ndefStatus {
                             session.alertMessage = "태그가 NDEF 호환되지 않습니다".localized
                             session.invalidate()
-                            return
                         } else if nil != error {
                             session.alertMessage = "태그의 NDEF 상태를 조회 할 수 없습니다".localized
                             session.invalidate()
-                            return
-                        }
-                        
-                        tag.readNDEF(completionHandler: { (message: NFCNDEFMessage?, error: Error?) in
-                            var statusMessage: String
-                            if nil != error || nil == message {
-                                statusMessage = "태그에서 NDEF를 읽지 못했습니다".localized
-                            } else {
-                                statusMessage = "NDEF 메시지를 찾았습니다".localized
-                                DispatchQueue.main.async {
-                                    if let msg = message { // message를 찾으면 추가!
-                                        self.detectedMessages.append(msg)
-                                        self.tableView.reloadData()
+                        } else {
+                            tag.readNDEF(completionHandler: { (message: NFCNDEFMessage?, error: Error?) in
+                                var statusMessage: String
+                                if nil != error || nil == message {
+                                    statusMessage = "태그에서 NDEF를 읽지 못했습니다".localized
+                                } else {
+                                    statusMessage = "NDEF 메시지를 찾았습니다".localized
+                                    DispatchQueue.main.async {
+                                        if let msg = message { // message를 찾으면 추가!
+                                            self.detectedMessages.append(msg)
+                                            self.tableView.reloadData()
+                                        }
                                     }
                                 }
-                            }
-                            session.alertMessage = statusMessage
-                            session.invalidate()
-                        })
+                                session.alertMessage = statusMessage
+                                session.invalidate()
+                            })
+                        }
                     })
                 }
             })
