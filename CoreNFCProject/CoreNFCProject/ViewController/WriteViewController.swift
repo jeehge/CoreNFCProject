@@ -13,6 +13,10 @@ import os
 class WriteViewController: UIViewController {
 
     // MARK: - Properties
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var textTextField: UITextField!
+    @IBOutlet weak var urlTextField: UITextField!
     var readerSession: NFCNDEFReaderSession?
     var ndefMessage: NFCNDEFMessage?
     var resultPayload: Array<NFCNDEFPayload> = [] // write value
@@ -21,6 +25,7 @@ class WriteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        initTextField()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,13 +39,22 @@ class WriteViewController: UIViewController {
         resultPayload = []
     }
     
+    func initTextField() {
+        textTextField.delegate = self
+        urlTextField.delegate = self
+        
+        textTextField.text = "payload 입력될 데이터"
+        urlTextField.text = "www.naver.com"
+    }
+    
     // MARK: - Actions
     @IBAction func writeNFCInfo(_ sender: UIButton) {
         let alertController: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let textWrite: UIAlertAction = UIAlertAction(title: "TEXT", style: .default) { _ in
-            guard let textPayload = NFCNDEFPayload.wellKnownTypeTextPayload(
-                string: "쫘잔 여기다가 글쒸를 쓰면 나오지령",
+            guard let text = self.textTextField.text,
+                let textPayload = NFCNDEFPayload.wellKnownTypeTextPayload(
+                string: text,
                 locale: Locale.current
                 ) else { return }
             self.resultPayload.append(textPayload)
@@ -48,7 +62,8 @@ class WriteViewController: UIViewController {
         }
         
         let urlWrite: UIAlertAction = UIAlertAction(title: "URL", style: .default) { _ in
-            if  let urlComponent = URLComponents(string: "https://www.naver.com"),
+            if  let urlText = self.urlTextField.text,
+                let urlComponent = URLComponents(string: "https://\(urlText)"),
                 let url = urlComponent.url,
                 let urlPayload = NFCNDEFPayload.wellKnownTypeURIPayload(url: url) {
                 
@@ -98,6 +113,10 @@ class WriteViewController: UIViewController {
                 self.tagRemovalDetect(tag)
             })
         }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+         self.view.endEditing(true)
     }
 }
 
@@ -166,5 +185,13 @@ extension WriteViewController: UINavigationControllerDelegate, NFCNDEFReaderSess
         print("readerSession:didInvalidateWithError")
         // If necessary, you may handle the error. Note session is no longer valid.
         // You must create a new session to restart RF polling.
+    }
+}
+
+extension WriteViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
